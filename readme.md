@@ -1,4 +1,4 @@
-Pequeno projeto para treinar as práticas de clean-code e clean-arch propostas em um mini-curso ministrado por [Chrysthian Moizes]([https://www.jetbrains.com/idea/](https://github.com/chrysthianmoizes) e [João Pedro Calixto](https://github.com/jpcalixto)
+Pequeno projeto para treinar as práticas de clean-code e clean-arch propostas em um mini-curso ministrado por [Chrysthian Moizes](https://github.com/chrysthianmoizes) e [João Pedro Calixto](https://github.com/jpcalixto)
 
 # Sistema gerenciador de Transações
 
