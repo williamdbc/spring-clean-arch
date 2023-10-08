@@ -19,4 +19,6 @@ public class TransactionDomain {
     private TransactionStatus status;
     private String type;
 
+
+
 }

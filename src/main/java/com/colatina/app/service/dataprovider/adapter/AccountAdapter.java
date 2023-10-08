@@ -58,5 +58,4 @@ public class AccountAdapter implements AccountGateway {
         return entity.getWallet().getBalance();
     }
 
-
 }

@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Getter
@@ -44,5 +45,21 @@ public class AccountEntity implements Serializable {
     @OneToOne(mappedBy = "account")
     @JoinColumn(name = "wallet_id")
     private WalletEntity wallet;
+
+    public boolean isActive(){
+        return status.equals(AccountStatus.ACTIVE);
+    }
+
+    public void debit(BigDecimal transactionValue){
+        wallet.setBalance(wallet.getBalance().subtract(transactionValue));
+    }
+
+    public void credit(BigDecimal transactionValue){
+        wallet.setBalance(wallet.getBalance().add(transactionValue));
+    }
+
+    public boolean hasEnoughBalance(BigDecimal transactionValue){
+        return wallet.getBalance().compareTo(transactionValue) > 0;
+    }
 
 }

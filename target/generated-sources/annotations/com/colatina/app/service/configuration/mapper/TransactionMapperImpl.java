@@ -1,7 +1,6 @@
 package com.colatina.app.service.configuration.mapper;
 
 import com.colatina.app.service.core.domain.TransactionDomain;
-import com.colatina.app.service.core.domain.enumeration.TransactionStatus;
 import com.colatina.app.service.dataprovider.entity.TransactionEntity;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-09-30T22:44:05-0300",
+    date = "2023-10-06T23:35:07-0300",
     comments = "version: 1.5.3.Final, compiler: javac, environment: Java 18.0.2 (Amazon.com Inc.)"
 )
 @Component
@@ -33,9 +32,7 @@ public class TransactionMapperImpl implements TransactionMapper {
         transactionEntity.setAccountDestination( accountInfoMapper.toEntity( dto.getAccountDestination() ) );
         transactionEntity.setValue( dto.getValue() );
         transactionEntity.setCreatedAt( dto.getCreatedAt() );
-        if ( dto.getStatus() != null ) {
-            transactionEntity.setStatus( dto.getStatus().name() );
-        }
+        transactionEntity.setStatus( dto.getStatus() );
         transactionEntity.setType( dto.getType() );
 
         return transactionEntity;
@@ -54,9 +51,7 @@ public class TransactionMapperImpl implements TransactionMapper {
         transactionDomain.setAccountDestination( accountInfoMapper.toDto( entity.getAccountDestination() ) );
         transactionDomain.setValue( entity.getValue() );
         transactionDomain.setCreatedAt( entity.getCreatedAt() );
-        if ( entity.getStatus() != null ) {
-            transactionDomain.setStatus( Enum.valueOf( TransactionStatus.class, entity.getStatus() ) );
-        }
+        transactionDomain.setStatus( entity.getStatus() );
         transactionDomain.setType( entity.getType() );
 
         return transactionDomain;
