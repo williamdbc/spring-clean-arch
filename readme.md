@@ -1,3 +1,5 @@
+Pequeno projeto para treinar as práticas de clean-code e clean-arch propostas em um mini-curso ministrado por [Chrysthian Moizes]([https://www.jetbrains.com/idea/](https://github.com/chrysthianmoizes) e [João Pedro Calixto](https://github.com/jpcalixto)
+
 # Sistema gerenciador de Transações
 
 O SGT tem a função de gerenciar as transações de usuários cadastrados no sistema.
